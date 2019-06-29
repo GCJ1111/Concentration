@@ -17,7 +17,7 @@ class ViewController: UIViewController {
     // 点击的总次数, 值变化的同时,会修改View中的label
     var flipCount: Int = 0 {
         didSet {
-            flipCountLabel.text = "Flips : \(flipCount) "
+            flipCountLabel.text = "翻转次数 : \(flipCount) "
         }
     }
     
@@ -35,8 +35,10 @@ class ViewController: UIViewController {
         if let cardNumber = cardButons.firstIndex(of: sender){
             print("cardNumber = \(cardNumber)")
 //            flipCard(withEmoji: emojiChoices[cardNumber], on: sender)
+            // 仅改变 card的 isFaceup 属性
             game.chooseCard(at: cardNumber)
-            updateViewFromModel()
+            // 刷新所有 按钮的View
+            uptAllBtn_ViewFromModel()
         } else {
             print("若第四个button不mapping 到 cardButons: [UIButton]!,  则 index 返回nil")
 
@@ -44,7 +46,7 @@ class ViewController: UIViewController {
         
     }
     
-    func updateViewFromModel() {
+    func uptAllBtn_ViewFromModel() {
         for index in cardButons.indices {
             let button = cardButons[index]
             let card = game.cards_array[index]
@@ -61,7 +63,7 @@ class ViewController: UIViewController {
         }
     }
     
-    var emojiChoices_array  = ["🎃","❤️","🏀","👻","🎁"]
+    var emojiChoices_array  = ["🎃","❤️","🏀","👻","🎁","💎","🐷","😈"]
     
     var emoji_dict = [Int : String ]()
     
