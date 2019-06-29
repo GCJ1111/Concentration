@@ -12,8 +12,11 @@ class Concentration
 {
 //    var card = Array<Card>()
     var cards_array = [Card]()
-    
-  
+ 
+    func chooseCard(at index : Int){
+        cards_array[index].isFaceUp = !cards_array[index].isFaceUp
+        
+    }
     
     init(numberOfPairsOfCards: Int){
         for _ in 0..<numberOfPairsOfCards{
@@ -21,7 +24,7 @@ class Concentration
             // add card and match_card
             cards_array += [card_obj,card_obj]
         }
-
+        
         
         print("\(numberOfPairsOfCards) pairs of the card has been created")
 

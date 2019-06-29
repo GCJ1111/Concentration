@@ -17,9 +17,12 @@ struct Card
     var isMatched = false
     var indentifier: Int
     
+    static var totalAmtIdent = 0
     static func getUniqueIdentifier() -> Int {
-    
-    init(indentifier: Int){
-        self.indentifier = 0
+        totalAmtIdent += 1
+        return totalAmtIdent
+    }
+    init(){
+        self.indentifier = Card.getUniqueIdentifier()
     }
 }
