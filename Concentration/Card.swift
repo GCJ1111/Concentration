@@ -18,6 +18,7 @@ struct Card
     var indentifier: Int
     
     static var totalAmtIdent = 0
+    
     static func getUniqueIdentifier() -> Int {
         totalAmtIdent += 1
         return totalAmtIdent

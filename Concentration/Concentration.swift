@@ -41,6 +41,7 @@ class Concentration
         
     }
     
+    // Concentration 的构造函数, 在创建实例的时候, 建立了一套 cards_array
     init(numberOfPairsOfCards: Int){
         for _ in 0..<numberOfPairsOfCards{
             let card_obj = Card()

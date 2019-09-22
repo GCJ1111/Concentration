@@ -11,6 +11,7 @@ import UIKit
 class ViewController: UIViewController {
     
     // 按照View中按钮的数量, 初始化 游戏.
+    // game 是 Concentration 类的 一个实例
     lazy var game = Concentration(numberOfPairsOfCards: (cardButons.count + 1 ) / 2 )
     
     
