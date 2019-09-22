@@ -34,7 +34,7 @@ class ViewController: UIViewController {
         /// 若第四个button不mapping 到 cardButons: [UIButton]!,  则 index 返回nil
         if let cardNumber = cardButons.firstIndex(of: sender){
             print("cardNumber = \(cardNumber)")
-//            flipCard(withEmoji: emojiChoices[cardNumber], on: sender)
+            
             // 仅改变 card的 isFaceup 属性
             game.chooseCard(at: cardNumber)
             // 刷新所有 按钮的View
@@ -70,13 +70,13 @@ class ViewController: UIViewController {
     
     func emoji_dict_lokup(for card : Card) -> String{
         
-        // 如果 index 查不到对应的key,则 新增词典
+        // 如果 某卡 没有对应的图标(nil),且颜文字数组中还有剩余的图标, =》 在词典中新增该卡对应的图标,
         if emoji_dict[card.indentifier] == nil , emojiChoices_array.count > 0 {
             let randomIndex = Int(arc4random_uniform(UInt32(emojiChoices_array.count)))
             emoji_dict[card.indentifier] = emojiChoices_array.remove(at: randomIndex)
         }
         
-        // 根据 index , 返回 key , (将option 解包)
+        // 根据 index , 显示对应的图标 , (将option 解包)
         return emoji_dict[card.indentifier] ?? "?"
         
     }

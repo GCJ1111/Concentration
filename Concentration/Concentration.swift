@@ -10,10 +10,13 @@ import Foundation
 
 class Concentration
 {
-//    var card = Array<Card>()
+    
+    // MARK: 新建一个空数组
+    // var card = Array<Card>()
     var cards_array = [Card]()
     
-    var indexOfOneAndOnlyFacedUpCard : Int?
+    
+    var indexOfOneAndOnlyFacedUpCard : Int?  // 当前唯一的一张, FacedUp=true 的卡片的index
  
     func chooseCard(at index : Int){
         // cards_array[index].isFaceUp = !cards_array[index].isFaceUp
